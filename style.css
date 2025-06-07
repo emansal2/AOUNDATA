@@ -273,9 +273,9 @@
         }
 
         .insights li::before {
-            content: '✓';
+            content:  ' ✓ ';
             position: absolute;
-            right: 10;
+            right: 30;
             color: #4a7c59;
             font-weight: bold;
             font-size: 1.2em;
