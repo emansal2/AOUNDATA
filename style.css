@@ -4,21 +4,20 @@
             box-sizing: border-box;
         }
 /* تنسيقات الشعار الدائري في أعلى الصفحة يسار */
+/* تنسيقات الشعار الدائري في أعلى الصفحة يسار */
 .logo {
     position: fixed;
     top: 25px;
     left: 25px;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     border-radius: 50%;
-    padding: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(74, 124, 89, 0.2);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(74, 124, 89, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .logo img {
@@ -30,10 +29,10 @@
 
 /* تأثيرات التفاعل */
 .logo:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 25px rgba(74, 124, 89, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(74, 124, 89, 0.25);
     border-color: rgba(74, 124, 89, 0.4);
-    background: rgba(255, 255, 255, 1);
+    background: #ffffff;
 }
 
 .logo:active {
@@ -44,21 +43,21 @@
 /* للشاشات الصغيرة */
 @media (max-width: 768px) {
     .logo {
-        width: 55px;
-        height: 55px;
+        width: 80px;
+        height: 80px;
         top: 20px;
         left: 20px;
-        padding: 8px;
+        padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        width: 45px;
-        height: 45px;
+        width: 70px;
+        height: 70px;
         top: 15px;
         left: 15px;
-        padding: 6px;
+        padding: 12px;
     }
 }
 
@@ -76,6 +75,43 @@
     animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* تأثير التحميل */
+.logo.loading {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* للوضع الليلي */
+@media (prefers-color-scheme: dark) {
+    .logo {
+        background: #ffffff;
+        border-color: rgba(74, 124, 89, 0.3);
+    }
+    
+    .logo:hover {
+        background: #ffffff;
+        border-color: rgba(74, 124, 89, 0.5);
+    }
+}
 @keyframes pulse {
     0% {
         transform: scale(0.8);
