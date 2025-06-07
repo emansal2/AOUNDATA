@@ -276,7 +276,7 @@
             content:  ' ✓ ';
             position: absolute;
             right: 20;
-             margin-right: 20px;
+           transform: translateX(20px);
             color: #4a7c59;
             font-weight: bold;
             font-size: 1.2em;
