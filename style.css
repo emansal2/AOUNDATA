@@ -1,75 +1,101 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* الحاوية العامة: flex بين الشعار والمحتوى */
-.header-section {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 40px 60px;
-  background-color: #3c6c48;
-  border-radius: 20px;
-  color: white;
-  direction: rtl;
+/* تنسيقات الشعار الدائري الثابت في الجانب الأيسر */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;  /* موضع في الجانب الأيسر */
+    width: 300px;  /* حجم كبير للشعار */
+    height: 300px;
+    z-index: 1000;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 35px;  /* مساحة داخلية أكبر */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);  /* ظل قوي */
+    border: 6px solid rgba(74, 124, 89, 0.4);  /* حدود واضحة */
+    transition: all 0.3s ease;  /* تأثير انتقالي ناعم */
 }
 
-/* الشعار */
-.header-logo {
-  width: 200px;
-  height: 200px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  border: 5px solid rgba(74, 124, 89, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.logo:hover {
+    transform: scale(1.05);  /* تكبير طفيف عند التمرير */
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
 }
 
-.header-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
-  image-rendering: -webkit-optimize-contrast;
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.2));  /* ظل للصورة */
+    image-rendering: -webkit-optimize-contrast;  /* تحسين جودة الصورة */
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;  /* للصور الصغيرة */
 }
 
-/* النص */
-.header-text h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.header-text p {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-/* responsive */
-@media (max-width: 768px) {
-  .header-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .header-logo {
-    width: 150px;
-    height: 150px;
-  }
-}
-/* للوضع الليلي */
-@media (prefers-color-scheme: dark) {
+/* للشاشات الكبيرة جداً */
+@media (min-width: 1200px) {
     .logo {
-        background: #ffffff;
-        border-color: rgba(74, 124, 89, 0.3);
+        width: 350px;
+        height: 350px;
+        padding: 40px;
+        top: 30px;
+        left: 30px;
+    }
+}
+
+/* للشاشات المتوسطة الكبيرة */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .logo {
+        width: 280px;
+        height: 280px;
+        padding: 32px;
+        top: 25px;
+        left: 25px;
+    }
+}
+
+/* للشاشات المتوسطة */
+@media (max-width: 991px) and (min-width: 769px) {
+    .logo {
+        width: 240px;
+        height: 240px;
+        padding: 28px;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) and (min-width: 481px) {
+    .logo {
+        width: 200px;
+        height: 200px;
+        padding: 25px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .logo {
+        width: 160px;
+        height: 160px;
+        padding: 20px;
+        top: 10px;
+        left: 10px;
+        border: 4px solid rgba(74, 124, 89, 0.4);
+    }
+}
+
+/* تحسينات إضافية للوضوح */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
     }
 }
 
