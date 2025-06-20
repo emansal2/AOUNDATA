@@ -1,14 +1,26 @@
-/* تهيئة عامة للصفحة */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
 }
 
-/* حاوية الشعار */
+/* الحاوية العامة: flex بين الشعار والمحتوى */
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 60px;
+  background-color: #3c6c48;
+  border-radius: 20px;
+  color: white;
+  direction: rtl;
+}
+
+/* الشعار */
 .header-logo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background-color: #ffffff;
   border-radius: 50%;
   padding: 20px;
@@ -18,42 +30,41 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-left: 40px;   /* لإبعاده عن الحافة اليسرى */
-  margin-top: 30px;
 }
 
-/* صورة الشعار */
 .header-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
 }
 
-/* استجابة الشعار للشاشات المتوسطة */
+/* النص */
+.header-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.header-text p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* responsive */
 @media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .header-logo {
-    width: 140px;
-    height: 140px;
-    padding: 15px;
-    margin-left: 20px;
+    width: 150px;
+    height: 150px;
   }
 }
-
-/* استجابة الشعار للشاشات الصغيرة */
-@media (max-width: 480px) {
-  .header-logo {
-    width: 120px;
-    height: 120px;
-    padding: 12px;
-    margin-left: 15px;
-  }
-}
-
-
-
 /* للوضع الليلي */
 @media (prefers-color-scheme: dark) {
     .logo {
