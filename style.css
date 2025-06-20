@@ -1,16 +1,11 @@
-/* تنسيق الحاوية العامة */
-.header-section {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 40px 60px;
-  background-color: #3c6c48; /* لون الخلفية */
-  border-radius: 20px;
-  color: white;
-  direction: rtl; /* إذا كان النص عربي */
+/* تهيئة عامة للصفحة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* شعار عوون - على اليسار */
+/* حاوية الشعار */
 .header-logo {
   width: 180px;
   height: 180px;
@@ -23,37 +18,40 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-left: 40px;   /* لإبعاده عن الحافة اليسرى */
+  margin-top: 30px;
 }
 
+/* صورة الشعار */
 .header-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
   image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-/* محتوى النص */
-.header-text h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  font-weight: bold;
+/* استجابة الشعار للشاشات المتوسطة */
+@media (max-width: 768px) {
+  .header-logo {
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    margin-left: 20px;
+  }
 }
 
-.header-text p {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-/* استجابة للشاشات الصغيرة */
+/* استجابة الشعار للشاشات الصغيرة */
 @media (max-width: 480px) {
-    .logo {
-        width: 180px;
-        height: 180px;
-        padding: 15px;
-        margin-left: 20px;
-    }
+  .header-logo {
+    width: 120px;
+    height: 120px;
+    padding: 12px;
+    margin-left: 15px;
+  }
 }
+
 
 
 /* للوضع الليلي */
